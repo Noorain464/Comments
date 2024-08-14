@@ -23,7 +23,7 @@ const Comment = ({comment,replies,currentUserId,deleteComment,activeComment,addC
       <div className="comment-right-part">
         <div className="comment-content">
           <div className="comment-author">{comment.username} </div>
-          <div>{comment.createdAt}</div>
+          <div>{createdAt}</div>
         </div>
         {!isEditing && <div className="comment-text">{comment.body}</div>}
         {isEditing &&(<CommentForm submitLabel="Update" hasCancelButton initialText={comment.body}
