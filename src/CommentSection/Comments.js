@@ -58,21 +58,21 @@ const Comments = ({currentUserId}) =>{
       <div className="comment-form-titile">Write comment</div>
       <CommentForm submitLabel="Write" handleSubmit={addComment}/>
       <div className="comments-container">
-      {rootComments.map((rootComment) => {
-        return (
-          <Comment 
-            key={rootComment.id} 
-            comment={rootComment} 
-            replies={getReplies(rootComment.id)}
-            currentUserId={currentUserId}
-            deleteComment={deleteComment}
-            activeComment={activeComment}
-            updateComment={updateComment}
-            setActiveComment={setActiveComment}
-            addComment={addComment}
-          />
-        );
-      })}
+        {rootComments.map((rootComment) => {
+          return (
+            <Comment 
+              key={rootComment.id} 
+              comment={rootComment} 
+              replies={getReplies(rootComment.id)}
+              currentUserId={currentUserId}
+              deleteComment={deleteComment}
+              activeComment={activeComment}
+              updateComment={updateComment}
+              setActiveComment={setActiveComment}
+              addComment={addComment}
+            />
+          );
+        })}
       </div>
     </div>
   );

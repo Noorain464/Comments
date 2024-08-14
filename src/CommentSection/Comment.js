@@ -1,6 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CommentForm from "./CommentForm";
-import { faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
 const Comment = ({comment,replies,currentUserId,deleteComment,activeComment,addComment,setActiveComment,parentId = null,updateComment})=>{
   const fiveMinutes = 300000;
   const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
@@ -20,7 +18,7 @@ const Comment = ({comment,replies,currentUserId,deleteComment,activeComment,addC
   return (
     <div className="comment">
       <div className="comment-image-container">
-        <FontAwesomeIcon icon={faUser}/>
+        <img src="src/CommentSection/download.jpeg" alt=""/>
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
@@ -33,7 +31,7 @@ const Comment = ({comment,replies,currentUserId,deleteComment,activeComment,addC
         <div className="comment-actions">
           {canReply && (<div className="comment-action" onClick={()=> setActiveComment({id:comment.id, type:"replying"})}>Reply</div>)}
           {canEdit && (<div className="comment-action" onClick={()=> setActiveComment({id:comment.id, type:"editing"})}>Edit</div>)}
-          {canDelete && (<div className="comment-action" onClick={()=> deleteComment(comment.id)}><FontAwesomeIcon icon={faTrash}/></div>)}
+          {canDelete && (<div className="comment-action" onClick={()=> deleteComment(comment.id)}>Delete</div>)}
         </div>
         {isReplying && (
           <CommentForm submitLabel="Reply" handleSubmit={(text) => addComment(text,replyId)}/>
