@@ -34,7 +34,7 @@ const Comment = ({comment,replies,currentUserId,deleteComment,activeComment,addC
           {canDelete && (<div className="comment-action" onClick={()=> deleteComment(comment.id)}>Delete</div>)}
         </div>
         {isReplying && (
-          <CommentForm submitLabel="Reply" handleSubmit={(text) => addComment(text,replyId)}/>
+          <CommentForm submitLabel="Reply" handleSubmit={(text,name) => addComment(name,text,replyId)}/>
         )}
         {replies.length > 0 && (
           <div  className="replies">

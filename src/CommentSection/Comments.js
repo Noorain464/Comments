@@ -17,9 +17,9 @@ const Comments = ({currentUserId}) =>{
       );
   }
 
-  const addComment = (text,parentId)=>{
-    console.log('addComment',text,parentId);
-    createCommentApi(text,parentId).then(comment=>{
+  const addComment = (name,text,parentId)=>{
+    console.log('addComment',text,name,parentId);
+    createCommentApi(name,text,parentId).then(comment=>{
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
     })
